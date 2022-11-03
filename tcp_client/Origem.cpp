@@ -13,10 +13,10 @@ int main() {
 	//Cria o "context" 
 	asio::io_context context;
 
-	//Pega o endereço no qual estamos conectando1
+	//Pega o endereÃ§o no qual estamos conectando1
 	asio::ip::tcp::endpoint endpoint(asio::ip::make_address("192.168.1.100", ec), 1000);
 
-	//Cria o socket, o context ira entregar a implementaçao
+	//Cria o socket, o context ira entregar a implementaÃ§ao
 	asio::ip::tcp::socket socket(context);
 
 	//Diz ao socket para tentar se conectar
@@ -27,19 +27,19 @@ int main() {
 	}
 
 	else {
-		std::cout << "Falha de conecxao com o endereço: \n" << ec.message()/*pega mensagem associada ao erro */ << std::endl;
+		std::cout << "Falha de conecxao com o endereÃ§o: \n" << ec.message()/*pega mensagem associada ao erro */ << std::endl;
 	}
 
 	//Verifia se esta conectado
 	if (socket.is_open()) {
 
-		char packet_bytes[] = {"a"
+		char packet_bytes[] = {"Teles"
 		};
 
 
 
 
-		//Se conexçao for True, escreve:
+		//Se conexÃ§ao for True, escreve:
 		//asio::buffer e um container, contendo bytes da string e sizer.
 		socket.write_some(asio::buffer(packet_bytes, sizeof(packet_bytes)), ec);
 
